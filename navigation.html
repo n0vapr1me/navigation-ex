@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Joey Thinkful</title>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css" />
+	<link href="style.css" rel="stylesheet" type="text/css" />
+
+	<style>
+		/* Mobile Styles */
+		.menu-toggle {
+			display: none;
+		}
+
+		.navbar {
+			display: none;
+		}
+
+		.title {
+			font-size: 52px;
+		}
+
+		.navbar li {
+			font-family: Montserrat, sans-serif;
+		}
+
+		/* Desktop Styles */
+		@media (min-width: 768px) {
+			.menu-toggle {
+				display: none;
+			}
+
+			.navbar {
+				display: block;
+			}
+
+			.title {
+				font-size: 48px;
+			}
+		}
+
+		body {
+			background-color: #0B1C51;
+			color: #ffffff;
+		}
+
+		header {
+			padding: 20px;
+		}
+
+		nav {
+			margin-top: 20px;
+		}
+
+		.navbar li {
+			display: inline-block;
+			margin-right: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1 class="title">Joey Thinkful</h1>
+		<nav>
+			<!-- Mobile Navigation -->
+			<div class="menu-toggle">&#9776;</div>
+
+			<!-- Desktop Navigation -->
+			<ul class="navbar">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Portfolio</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<script>
+		// Mobile Navigation Toggle
+		document.querySelector('.menu-toggle').addEventListener('click', function () {
+			const navbar = document.querySelector('.navbar');
+			if (navbar.style.display === 'block') {
+				navbar.style.display = 'none';
+			} else {
+				navbar.style.display = 'block';
+				navbar.style.flexDirection = 'column';
+			}
+		});
+	</script>
+</body>
+
+</html>
